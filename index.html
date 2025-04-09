@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>品牌展会转发卡片</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    img { width: 300px; border-radius: 12px; margin-bottom: 20px; }
+    button {
+      background-color: #ff2442; color: white;
+      font-size: 18px; padding: 10px 20px;
+      border: none; border-radius: 8px; cursor: pointer;
+    }
+    #msg { margin-top: 10px; color: green; }
+  </style>
+</head>
+<body>
+  <h2>📸 长按保存图片 + 一键复制文案</h2>
+  <img src="image.png" alt="宣传图" />
+  <p id="text">📢 刚刚在展会上看到某品牌发布的新款设备，极简外观＋顺滑手感，真的很惊艳！设计党必冲～</p>
+  <button id="copy-btn">📋 复制文案</button>
+  <div id="msg"></div>
+  <p style="margin-top:20px;">打开平台发布图文，即可领取活动好礼 🎁</p>
+
+  <script>
+    document.getElementById("copy-btn").addEventListener("click", function () {
+      const text = document.getElementById("text").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById("msg").innerText = "✅ 文案已复制，快去平台粘贴发布吧！";
+      });
+    });
+  </script>
+</body>
+</html>
